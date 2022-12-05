@@ -1,0 +1,28 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+	<div id="contents">
+		<dl id="loginData" class="clearfix">
+			<dt>ログインユーザ：<%= username %></dt>
+			<dt>最終ログイン日時：<%= lastdate %></dt>
+		</dl>
+		<div id="contentsInner"><!-- InstanceBeginEditable name="contents" -->
+			<h3><%= title %></h3>
+  
+			<div id="block">
+				<ul style="list-style: none;">
+                    <li><p>ここに処理内容</p></li>
+                    <li><p><a href="../result">アップロード完了画面へ</a></p></il>
+					<li><p><a href="../">メニューへ</a></p></il>
+				</ul>
+		<!-- InstanceEndEditable -->
+            </div>
+			<div id="blockFooter">
+				<ul>
+					<li id="login"><input type="submit" name="submit" value="&nbsp;" /></li>
+				</ul>
+			</div>	
+		</div>
+	</div>	
+
+<%- include('partials/footer') %>

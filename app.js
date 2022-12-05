@@ -10,6 +10,8 @@ var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var uploadRouter = require('./routes/upload');
 var resultRouter = require('./routes/result');
+var logoutRouter = require('./routes/logout');
+var helpRouter = require('./routes/help');
 
 var app = express();
 
@@ -32,6 +34,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
+app.use('/help', helpRouter);
 
 //session check
 app.use((req, res, next) => {
@@ -47,6 +51,8 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/upload', uploadRouter);
 app.use('/result', resultRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
