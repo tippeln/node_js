@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* ブラウザの初期設定解除 */
+* {
+	margin:0px;
+	padding:0px;
+}
+
+body,
+h1,h2,h3,h4,h5,h6,
+p,ul,ol,dl,dt,dd,li,
+table,th,td,
+form,select,option,input,
+address,pre,strong,em,iframe,
+blockquote {
+	margin:0;
+	padding:0;
+	font-size:100%;
+	font-weight:normal;
+	font-style:normal;
+	text-decoration:none;
+}
+
+/* 直接コンテンツが入る要素にfont-sizeを指定 */
+p,th,td,
+dt,dd,li,
+select,textarea,input{
+	font-size:small;
+	/*\*/ /*/ font-size:x-small; /* MacIE */
+
+	line-height:140%;
+}
+
+img{
+	border:0;
+	vertical-align:bottom;
+}
+
+a {
+	text-decoration:none;
+	outline:none;/* リンク設定の破線を消す */
+}
+
+.clearfix:after {
+  content: ".";  /* 新しい要素を作る */
+  display: block;  /* ブロックレベル要素に */
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  min-height: 1px;
+}
+
+* html .clearfix {
+  height: 1px;
+  /*¥*//*/
+  height: auto;
+  overflow: hidden;
+  /**/
+}

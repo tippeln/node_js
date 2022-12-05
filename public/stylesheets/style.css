@@ -1,8 +1,379 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ================================================== */
+/* --------------------------------------------------
+   Style Name: style css file
+   Style Description: Master Style
+   Site Name: NCD DataUpload System
+   Since: 2012/11/15
+   Version: 1.0
+   -------------------------------------------------- */
+/* ================================================== */
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color:#EFEFEF;
+	color:#8C8C8C;
 }
 
-a {
-  color: #00B7FF;
+a:link {color:#2763B6;}
+a:visited {color:#2763B6;}
+a:hover {color:#FFBF00;}
+a:focus {color:#2763B6;}
+a:active {color:#F00;}
+
+#wrapper {
+	width:100%;
+	background:url(../img/bg.gif) 0 0;
+}
+
+.hidden {
+	display:none;
+}
+
+.text-center {
+	text-align:center;
+}
+
+/* ================================================== */
+/* #header */
+/* ================================================== */
+#header {
+	width:100%;
+	height:70px;
+	background:url(../img/header_bg.png) top repeat-x;
+}
+
+#hgroup {
+	width:900px;
+	height:70px;
+	margin:0 auto;
+	position:relative;
+}
+
+#hgroup h1 {
+	width:260px;
+	height:30px;
+	background:url(../img/ndcuploasystem.png) 0 0 no-repeat;
+	text-indent:-9999px;
+	position:absolute;
+	top:25px;
+	left:0;
+}
+
+#hgroup h2 {
+	font-size:10px;
+	color:#fff;
+	position:absolute;
+	bottom:24px;
+	right:110px;
+}
+
+ul#headerNavi {
+	width:100px;
+	position:absolute;
+	top:11px;
+	right:0;
+}
+
+ul#headerNavi li {
+	list-style-type:none;
+	float:left;
+}
+
+ul#headerNavi li a {
+	display:block;
+	width:45px;
+	height:41px;
+	text-indent:-9999px;
+}
+
+ul#headerNavi li#logout a {
+	background:url(../img/logout_btn.png) 0 0 no-repeat;
+	margin-right:10px;
+}
+
+ul#headerNavi li#logout a:hover {
+	background:url(../img/logout_btn_on.png) 0 0 no-repeat;
+}
+
+ul#headerNavi li#help a {
+	background:url(../img/help_btn.png) 0 0 no-repeat;
+}
+
+ul#headerNavi li#help a:hover {
+	background:url(../img/help_btn_on.png) 0 0 no-repeat;
+}
+
+/* ================================================== */
+/* #contents */
+/* ================================================== */
+
+#contents {
+	width:900px;
+	padding:20px 0 35px;
+	margin:0 auto;
+}
+
+#contentsInner {
+	clear:both;
+	background-color:#fff;
+	border:1px solid #C8C8C8;
+	padding:30px;
+
+	-moz-border-radius: 10px;/* for Firefox */
+	-webkit-border-radius: 10px;/*for Safari and chrome */
+	border-radius: 10px;/*CSS3*/
+	behavior: url(border-radius.htc);/*for IE*/
+}
+
+#contentsInner h3 {
+	color:#3F3F3F;
+	font-size:21px;
+	font-weight:bold;
+	text-align:center;
+	margin:20px 0 40px;
+}
+
+#contentsInner h4 {
+	color:#000;
+	background-color:#E1F0F8;
+	font-size:12px;
+	font-weight:bold;
+	text-align:center;
+	padding:10px;
+	border-bottom:1px solid #C8C8C8;
+}
+
+#block {
+	border:1px solid #C8C8C8;
+}
+
+#blockInner {
+	border:2px solid #FFF;
+	background-color:#F7F7F7;
+	padding:30px;
+}
+
+#blockInner02 {
+	padding:15px 30px;
+}
+
+/* List style */
+.odd {
+	background-color:#F7F7F7;
+}
+
+/* ================================================== */
+/* #loginData */
+/* ================================================== */
+
+dl#loginData {
+	width:220px;
+	float:right;
+}
+
+dl#loginData dt {
+	float:left;
+	clear:left;
+}
+
+dl#loginData dt,
+dl#loginData dd {
+	font-size:12px;
+	font-weight:bold;
+	margin-bottom:10px;
+	color:#2763B6;
+}
+
+/* ================================================== */
+/* #attentionBlock */
+/* ================================================== */
+
+#attentionBlock {
+	border:1px solid #C8C8C8;
+	margin:0px 15px 15px;
+	padding:10px;
+	height:80px;
+	overflow:auto;
+}
+
+#attentionBlock ul {
+	margin-left:1em;
+}
+
+#attentionBlock ul li {
+	margin-bottom:0.5em;
+}
+
+/* ================================================== */
+/* #pagenate */
+/* ================================================== */
+#pagenate {
+	text-align:center;
+	margin:15px 0;
+}
+
+#pagenate ul li {
+	list-style-type: none;
+	font-size:12px;
+	display: inline;
+}
+
+#pagenate ul li a {
+	text-decoration: none;
+	margin: 2px 5px;
+}
+
+/* ================================================== */
+/* #blockFooter */
+/* ================================================== */
+#blockFooter {
+	border-top:1px solid #C8C8C8;
+	padding:20px;
+
+	/* �ʏ� */
+	background:linear-gradient(#2763B6, #004081);
+	/* webkit�p */
+	background:-webkit-gradient(linear, left top, left bottom, from(#2763B6), to(#004081));
+	/* mozilla�p */
+	background:-moz-linear-gradient(top, #2763B6, #004081);
+	/*IE6 IE7 */
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startcolorstr=#2763B6, endcolorstr=#004081));
+	/* IE8 */
+	-ms-filter:"progid:DXImageTransform.Microsoft.gradient(GradientType=0,startcolorstr=#2763B6, endcolorstr=#004081))";
+	zoom: 1;
+}
+
+#blockFooter ul li {
+	list-style-type:none;
+}
+
+/* #login */
+#blockFooter li#login input {
+    border: 0px;
+	width:212px;
+	height:44px;
+	background:url(../img/login_btn.png) 0 0 no-repeat;
+	cursor:pointer;
+}
+
+#blockFooter li#login input:hover {
+	background:url(../img/login_btn_on.png) 0 0 no-repeat;
+}
+
+/* #back */
+#blockFooter ul li#back a {
+	display:block;
+	width:212px;
+	height:44px;
+	background:url(../img/back_btn.png) 0 0 no-repeat;
+	text-indent:-9999px;
+}
+
+#blockFooter ul li#back a:hover {
+	background:url(../img/back_btn_on.png) 0 0 no-repeat;
+}
+
+/* #resultBack */
+#blockFooter ul li#resultBack a {
+	display:block;
+	width:212px;
+	height:44px;
+	background:url(../img/resultback_btn.png) 0 0 no-repeat;
+	text-indent:-9999px;
+}
+
+#blockFooter ul li#resultBack a:hover {
+	background:url(../img/resultback_btn_on.png) 0 0 no-repeat;
+}
+
+/* #resultCheck */
+#blockFooter ul li#resultCheck a {
+	display:block;
+	width:212px;
+	height:44px;
+	background:url(../img/resultcheck_btn.png) 0 0 no-repeat;
+	text-indent:-9999px;
+}
+
+#blockFooter ul li#resultCheck a:hover {
+	background:url(../img/resultcheck_btn_on.png) 0 0 no-repeat;
+}
+
+/* #menuBack */
+#blockFooter ul li#menuBack a {
+	display:block;
+	width:212px;
+	height:44px;
+	background:url(../img/menuback_btn.png) 0 0 no-repeat;
+	text-indent:-9999px;
+}
+
+#blockFooter ul li#menuBack a:hover {
+	background:url(../img/menuback_btn_on.png) 0 0 no-repeat;
+}
+
+/* #upload */
+#blockFooter ul li#upload input {
+    border: 0px;
+	width:212px;
+	height:44px;
+	background:url(../img/upload_btn.png) 0 0 no-repeat;
+	cursor:pointer;
+}
+
+#blockFooter ul li#upload input:hover {
+	background:url(../img/upload_btn_on.png) 0 0 no-repeat;
+}
+
+/* #execute */
+#blockFooter ul li#execute input {
+    border: 0px;
+	width:212px;
+	height:44px;
+	background:url(../img/exec_btn.png) 0 0 no-repeat;
+	cursor:pointer;
+}
+
+/* #cancel */
+#blockFooter ul li#cancel input {
+    border: 0px;
+	width:212px;
+	height:44px;
+	background:url(../img/cancel_btn.png) 0 0 no-repeat;
+	cursor:pointer;
+}
+
+
+/* #upload */
+#blockFooter ul li#download input {
+    border: 0px;
+	width:212px;
+	height:44px;
+	background:url(../img/download_btn.png) 0 0 no-repeat;
+	cursor:pointer;
+}
+
+#blockFooter ul li#download input:hover {
+	background:url(../img/download_btn_on.png) 0 0 no-repeat;
+}
+
+/* ================================================== */
+/* #footer */
+/* ================================================== */
+
+#footer {
+	width:100%;
+	border-top:1px solid #C8C8C8;
+}
+
+#footerInner {
+	width:900px;
+	margin:10px auto;
+	text-align:right;
+}
+
+#footerInner p {
+	font-size:10px;
 }

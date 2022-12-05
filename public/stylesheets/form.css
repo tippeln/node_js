@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+input[type="text"],
+input[type="file"],
+input[type="password"],
+select {
+	padding:5px;
+}

@@ -1,0 +1,60 @@
+<%- include('partials/head') %>
+
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="hgroup">
+			<h1>NCD DataUpload System</h1> 
+			<h2>National Clinical Database データアップロードシステム</h2>
+
+			<ul id="headerNavi" class="clearfix">
+				<li id="help"><a href="https://registry3.ncd.or.jp/data/upload_manual.pdf">HELP</a></li>
+			</ul>
+
+		</div>
+	</div>
+
+	<div id="contents">
+		<dl id="loginData">
+        <!--dt>ログインユーザ：</dt-->
+            <dd>&nbsp;</dd>
+        <!--dt>最終ログイン日時：</dt-->
+            <dd>&nbsp;</dd>
+		</dl>
+		<div id="contentsInner"><!-- InstanceBeginEditable name="contents" -->
+			<h3>ログイン</h3>
+
+			<div id="block">
+			<form name="loginActionForm" method="post" action="/login/post">
+				<div id="blockInner">
+				<font color="red"><ul style="list-style: none;"><li><%= iderr %></li><li><%= pwderr %></li></ul></font>
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<th>ユーザID</th>
+						<td><input type="text" id="userid" name="userid" value="" /></td>
+					</tr>
+					<tr>
+						<th>パスワード</th>
+						<td><input type="password" id="password" name="password" value=""/></td>
+					</tr>
+				</table>
+				</div>
+				<div id="blockFooter">
+					<ul>
+						<li id="login"><input type="submit" name="submit" value="&nbsp;" /></li>
+					</ul>
+				</div>
+			</form>
+			</div>
+			<br/>
+			<font color="red"><b>
+				本サービスは、症例登録の補助ツールとして公開をしております。<br/>
+				本サービスは各施設の責任においてご利用ください。
+			</b>
+			</font>
+		<!-- InstanceEndEditable --></div>
+	</div>
+
+</div>
+
+<%- include('partials/footer') %>

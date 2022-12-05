@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+#blockInner table {
+	margin:0 auto;
+}
+
+#blockInner table tr th,
+#blockInner table tr td {
+	padding:15px 0;
+}
+
+#blockInner table tr th {
+	padding-right:10px;
+	white-space:nowrap;
+	font-size:12px;
+	font-weight:bold;
+	text-align:right;
+}
+
+#blockInner input#userid,
+#blockInner input#password {
+	width:360px;
+}
+
+/* ================================================== */
+/* #blockFooter */
+/* ================================================== */
+#blockFooter ul {
+	width:212px;
+	margin:0 auto;
+}
