@@ -12,6 +12,8 @@ var uploadRouter = require('./routes/upload');
 var resultRouter = require('./routes/result');
 var logoutRouter = require('./routes/logout');
 var helpRouter = require('./routes/help');
+//db access test
+var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -37,6 +39,7 @@ app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 app.use('/help', helpRouter);
 
+
 //session check
 app.use((req, res, next) => {
   console.log('ミドルウェア実行:' + req.session.username)
@@ -51,7 +54,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/upload', uploadRouter);
 app.use('/result', resultRouter);
-
+app.use('/users', usersRouter);
 
 
 // catch 404 and forward to error handler
