@@ -22,18 +22,23 @@ router.post('/', (req, res, next) => {
       res.statusCode = 403;
       res.render('login',{iderr:'ユーザIDを入力してください。', pwderr:'パスワードを入力してください。'});
     }
-    //DB Access
+    //ユーザーマスタ検索
       db.m_user.findOne({
-        where:{
-          user_id:req.body.userid
-        }
+        where:{user_id:req.body.userid}
       }).then(usr=>{
         if (usr != null) {
           if(bcrypt.compareSync(req.body.password, usr.pwd)) {
             req.session.username = usr.user_nm;
             const date = new Date();
             req.session.lastdate = date.toLocaleString();
-            console.log('login ok!')
+            console.log('login ok!');
+            //最終ログオン日時の更新
+            db.m_user.update({
+              last_logon_datetime:date
+            },
+            {
+              where:{user_id:req.body.userid}
+            })
             res.redirect('/');
           }
         } else {
