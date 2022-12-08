@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/index');
 const { Op } = require("sequelize");
+const bcrypt = require('bcrypt');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -12,29 +13,29 @@ router.get('/', (req, res, next) => {
       }
 });
 
-router.post('/post', (req, res, next) => {
-    var userid = req.body['userid'] || null;
-    var password = req.body['password'] || null;
+router.post('/', (req, res, next) => {
+    var userid = req.body.userid || null;
+    var password = req.body.password || null;
     console.log('user:' + userid);
 
     if(!userid || !password) {
       res.statusCode = 403;
       res.render('login',{iderr:'ユーザIDを入力してください。', pwderr:'パスワードを入力してください。'});
     }
-
     //DB Access
-      db.User.findOne({
+      db.m_user.findOne({
         where:{
-          name:req.body.userid,
-          pass:req.body.password,
+          user_id:req.body.userid
         }
       }).then(usr=>{
         if (usr != null) {
-          req.session.username = usr.name;
-          req.session.lastdate = new Date();
-          console.log('login ok!')
-          res.redirect('/');
-
+          if(bcrypt.compareSync(req.body.password, usr.pwd)) {
+            req.session.username = usr.user_nm;
+            const date = new Date();
+            req.session.lastdate = date.toLocaleString();
+            console.log('login ok!')
+            res.redirect('/');
+          }
         } else {
           var data = {
             iderr:'ユーザIDかパスワードに問題があります。再度入力下さい。',
