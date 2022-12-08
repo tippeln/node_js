@@ -5,6 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   var data = {
       title: 'アップロード',
+      func:'common',
       username: req.session.username,
       lastdate: req.session.lastdate
   }
@@ -15,6 +16,7 @@ router.get('/', function(req, res, next) {
 router.get('/upload_done', function(req, res, next) {
     var data = {
         title: 'アップロード完了',
+        func:'common',
         username: req.session.username,
         lastdate: req.session.lastdate
     }

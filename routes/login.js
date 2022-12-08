@@ -9,7 +9,16 @@ router.get('/', (req, res, next) => {
     if (req.session.username) {
         res.redirect('/');
       } else {
-        res.render('login',{iderr:'　　', pwderr:'　　'});
+        var data = {
+          title: 'ログイン',
+          func:'login',
+          username: req.session.username,
+          lastdate: req.session.lastdate,
+          iderr:'　　',
+          pwderr:'　　',
+          func:'login'
+        }
+        res.render('login',　data);
       }
 });
 
@@ -20,7 +29,16 @@ router.post('/', (req, res, next) => {
 
     if(!userid || !password) {
       res.statusCode = 403;
-      res.render('login',{iderr:'ユーザIDを入力してください。', pwderr:'パスワードを入力してください。'});
+      var data = {
+        title: 'ログイン',
+        func:'login',
+        username: req.session.username,
+        lastdate: req.session.lastdate,
+        iderr:'ユーザIDを入力してください。',
+        pwderr:'パスワードを入力してください。',
+        func:'login'
+      }
+      res.render('login',　data);
     }
     //ユーザーマスタ検索
       db.m_user.findOne({
@@ -43,8 +61,13 @@ router.post('/', (req, res, next) => {
           }
         } else {
           var data = {
+            title: 'ログイン',
+            func:'login',
+            username: req.session.username,
+            lastdate: req.session.lastdate,
             iderr:'ユーザIDかパスワードに問題があります。再度入力下さい。',
-            pwderr:'　　'
+            pwderr:'　　',
+            func:'login'
           }
           res.statusCode = 403;
           res.render('login', data);

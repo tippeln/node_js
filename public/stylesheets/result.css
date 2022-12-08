@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+
+#block table {width:100%;}
+
+#block table thead {
+	color:#000;
+	background-color:#E1F0F8;
+}
+
+#block table thead tr th {
+	text-align:left;
+	padding:10px;
+	border-bottom:1px solid #C8C8C8;
+	font-size:12px;
+	font-weight:bold;
+}
+
+#block table thead tr th {width:15%; text-align:center;padding:10px;border-bottom:1px solid #C8C8C8;}
+#block table thead tr th + th {width:12%;text-align:center;}
+#block table thead tr th + th + th {width:16%; text-align:center;}
+#block table thead tr th + th + th + th {width:14%;text-align:center;}
+#block table thead tr th + th + th + th + th {width:13%;text-align:center;}
+#block table thead tr th + th + th + th + th + th {width:15%;text-align:center;}
+#block table thead tr th + th + th + th + th + th + th {width:5%;text-align:center;}
+#block table thead tr th + th + th + th + th + th + th + th {width:12%;text-align:center;}
+
+
+#block table tbody tr td {
+	padding:10px;
+}
+
+#block table tbody tr td span {
+	display:block;
+	padding:3px;
+	border:1px solid #C8C8C8;
+	font-size:12px;
+	color:#000;
+	background-color:#FFF;
+}
+#block table tbody tr td:last-child{word-break: keep-all;}
+#block table tbody tr td span {width:97%; text-align:left; float:right;}
+#block table tbody tr td + td span {width:97%; text-align:left;}
+#block table tbody tr td + td + td span {width:97%; text-align:left; float:left;}
+#block table tbody tr td + td + td + td span {width:95%; text-align:left;}
+#block table tbody tr td + td + td + td + td span {width:97%; text-align:left;}
+#block table tbody tr td + td + td + td + td + td span {width:97%; text-align:left;}
+#block table tbody tr td + td + td + td + td + td + td span {width:97%; text-align:right;}
+#block table tbody tr td + td + td + td + td + td + td + td span {width:97%; text-align:center;}
+
+
+
+/* ================================================== */
+/* #attentionBlock */
+/* ================================================== */
+#attentionBlock { margin-top:15px;}
+
+
+/* ================================================== */
+/* #blockFooter */
+/* ================================================== */
+#blockFooter ul {
+	width:212px;
+	margin:0 auto;
+}
+

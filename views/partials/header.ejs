@@ -1,15 +1,35 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-Style-Type" content="text/css" />
+<meta http-equiv="content-Script-Type" content="text/javascript" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCD DataUpload System</title>
+
+<script type="text/javascript" src="/javascripts/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="/javascripts/script.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/common.css"/>
+<link rel="stylesheet" type="text/css" href="/stylesheets/<%= func %>.css"/>
+</head>
+
 <body>
-<div id="wrapper">
-	<div id="header">
-		<div id="hgroup">
-			<h1>NCD DataUpload System </h1>  <!-- NCD DataUpload System -->
-			<h2>National Clinical Database データアップロードシステム</h2>
-
-			<ul id="headerNavi" class="clearfix">
-				<li id="help"><a href="https://registry3.ncd.or.jp/data/upload_manual.pdf">HELP</a></li>
-				<li id="logout"><a href="../logout">LOGOUT</a></li>
-			</ul>
-
-		</div>
-	</div>
-
+    <div id="wrapper">
+        <div id="header">
+            <div id="hgroup">
+                <h1>NCD DataUpload System </h1> 
+                <h2>National Clinical Database データアップロードシステム</h2>
+    
+                <ul id="headerNavi" class="clearfix">
+                    <li id="help"><a href="/data/upload_manual.pdf" target="_blank" rel="norefferrer">HELP</a></li>
+                    <li id="logout"><a href="../logout">LOGOUT</a></li>
+                </ul>
+    
+            </div>
+        </div>
+        <div id="contents">
+            <dl id="loginData" class="clearfix">
+                <dt>ログインユーザ：<%= username %></dt>
+                <dt>最終ログイン日時：<%= lastdate %></dt>
+            </dl>

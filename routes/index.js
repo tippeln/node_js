@@ -5,6 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   var data = {
       title: 'メニュー',
+      func:'index',
       username: req.session.username,
       lastdate: req.session.lastdate
   }
