@@ -4,19 +4,83 @@
 		<h3><%= title %></h3>
 
 		<div id="block">
-			<div id="blockInner">
-				<ul>
-					<li><p>ここに処理内容</p></li>
-				</ul>
-			</div>
+			<form name="updateActionForm" method="post" action="upload">
+				<div id="blockInner">
+					<table cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<th><p>専門分野</p></th>
+							<td>
+								<select required>
+									<option value="" hidden>お選びください</option>
+									<option value="1">専門分野1</option>
+									<option value="2">専門分野1</option>
+									<option value="3">専門分野1</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th><p>年度</p></th>
+							<td>
+								<select required>
+									<option value="" hidden>お選びください</option>
+									<option value="1">2022年度</option>
+									<option value="2">2021年度</option>
+									<option value="3">2020年度</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th><p>種別　</p></th>
+							<td>
+								<input id="new" type="radio" name="new" />
+								<label for="new">新規</label>
+								<input id="add" type="radio" name="add" />
+								<label for="add">入院・手術追加</label></p></li>
+							</td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="blockInner02">
+					<table cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<th><p>ファイル</p></th>
+							<td>
+								<input type="text" id="file" name="file" value=""" /><input type="file" id="file2" name="file2" value="参照" />
+							</td>
+						</tr>
 
-			<div id="blockFooter">
-				<ul>
-					<li id="upload"><a href="/upload/upload_done"><input type="submit" name="submit" value="&nbsp;" /></a></li>
-					<li id="back"><a href="../">メニューへ</a></li>
-				</ul>
-			</div>	
+						<tr>
+							<th><p>年度</p></th>
+							<td>
+								<select required>
+									<option value="" hidden>お選びください</option>
+									<option value="1">施設・診療科1</option>
+									<option value="2">施設・診療科2</option>
+									<option value="3">施設・診療科3</option>
+								</select>
+							</td>
+						</tr>
+
+						<tr>
+							<th><p>連絡先メールアドレス</p></th>
+							<td>
+								<input type="text" id="mail" name="mail" value=""" />
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="blockFooter">
+					<ul>
+						<li id="upload"><a href="../upload/upload_done"><input type="submit" name="submit" value="&nbsp;" /></a></li>
+						<li id="back"><a href="../">メニュー</a></li>
+					</ul>
+				</div>	
+			</form>
 		</div>
-	</div>	
+	</div>
+
+
 	
 <%- include('partials/footer') %>

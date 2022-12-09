@@ -1,0 +1,33 @@
+.err_tbl {
+    width: 100%;
+}
+.err_tbl tr th {
+	background-color: #A2D2E8;
+}
+
+.err_tbl tr th p {
+    font-size: 8px;
+    font-weight: bold;
+    color:black;
+}
+
+.no input{
+	width: 50px;
+}
+
+.colum_no input {
+	width: 50px;
+}
+
+.error input {
+	width: 180px;
+    height:30px;
+}
+
+.rcolum_no input {
+	width: 100px;
+}
+
+.biko input {
+	width: 300px;
+}

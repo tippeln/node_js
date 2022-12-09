@@ -27,7 +27,7 @@ router.get('/execute', function(req, res, next) {
 router.get('/errorcheck', function(req, res, next) {
     var data = {
         title: 'エラー確認画面',
-        func:'common',
+        func:'errorcheck',
         username: req.session.username,
         lastdate: req.session.lastdate
     }

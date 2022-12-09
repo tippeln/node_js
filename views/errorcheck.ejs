@@ -4,21 +4,42 @@
 		<h3><%= title %></h3>
 
 		<div id="block">
-			<div id="blockInner">
-				<ul>
-					<li><p>ここに処理</p></il>
+			<form name="errchkActionForm" method="post" action="errorcheck">
+			
+				<div id="blockInner">
+					<!--<table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
+					<table cellpadding="5" cellspacing="0" border="0" class="err_tbl">
+						<tr>
+							<th><p>行</p></th>
+							<th><p>カラム番号</p></th>
+							<th><p>エラー内容</p></th>
+							<th><p>関連カラム番号</p></th>
+							<th><p>備考</p></th>
+						</tr>
+						<tr>	
+							<td class="no"><input type="no" id="no" name="no" value="" /></td>
+							<td class="colum_no"><input type="colum_no" id="colum_no" name="colum_no" value=""/></td>
+							<td class="error"><input type="error" id="error" name="error" value="" /></td>
+							<td class="rcolum_no"><input type="rcolum_no" id="rcolum_no" name="rcolum_no" value="" /></td>
+							<td class="biko"><input type="biko" id="biko" name="biko" value="" /></td>
+						</tr>
+					</table>
+				</div>	
+			
 
-				</ul>
-			</div>
+				<div id="blockFooter">
+					<ul>
+						<li id="download"><input type="submit" name="submit" value="&nbsp;" /></li>
+						<li id="upload" style="visibility: hidden;"><input type="submit" name="submit" value="&nbsp;" /></li>
+					</ul>
+					<ul>			
+						<li id="resultBack"><a href="./">取込結果画面へ</a></li>
+						<li id="menuBack"><a href="../">メニューへ</a></li>
+					</ul>
+				</div>	
 
-			<div id="blockFooter">
-				<ul>
-					<li id="download"><input type="submit" name="submit" value="&nbsp;" /></li>
-					<li id="resultBack"><a href="./">取込結果画面へ</a></li>
-					<li id="menuBack"><a href="../">メニューへ</a></li>
-				</ul>
-			</div>
+			</form>
 		</div>
-	</div>	
+	</div>
 
 <%- include('partials/footer') %>

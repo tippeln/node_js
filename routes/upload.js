@@ -12,15 +12,15 @@ router.get('/', function(req, res, next) {
   res.render('upload', data);
 });
 
-/* GET users listing. */
-router.get('/upload_done', function(req, res, next) {
-    var data = {
-        title: 'アップロード完了',
-        func:'common',
-        username: req.session.username,
-        lastdate: req.session.lastdate
-    }
-    res.render('upload_done', data);
-  });
+/* POST users listing. */
+router.post('/', function(req, res, next) {
+  var data = {
+      title: 'アップロード完了',
+      func:'common',
+      username: req.session.username,
+      lastdate: req.session.lastdate
+  }
+  res.render('upload_done', data);
+});
 
 module.exports = router;
