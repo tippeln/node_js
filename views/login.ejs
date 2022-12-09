@@ -1,16 +1,16 @@
 <%- include('partials/header') %>
 
-		<div id="contentsInner"><!-- InstanceBeginEditable name="contents" -->
+		<div id="contentsInner">
 			<h3>ログイン</h3>
 
 			<div id="block">
 			<form name="loginActionForm" method="post" action="/login">
 				<div id="blockInner">
-				<font color="red"><ul style="list-style: none;"><li><%= iderr %></li><li><%= pwderr %></li></ul></font>
+				<font color="red"><ul style="list-style: none;"><li><%= errmsg %></li></ul></font>
 				<table cellpadding="0" cellspacing="0" border="0">
 					<tr>
 						<th>ユーザID</th>
-						<td><input type="text" id="userid" name="userid" value="" /></td>
+						<td><input type="text" id="userid" name="userid" value="<%= userid %>" /></td>
 					</tr>
 					<tr>
 						<th>パスワード</th>
