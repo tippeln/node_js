@@ -2,7 +2,8 @@
 /* CSS Document */
 
 #blockInner table {
-	margin:0 auto;
+	margin:0 auto 30px;
+	
 }
 
 #blockInner table tr th,

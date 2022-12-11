@@ -1,13 +1,12 @@
 <%- include('partials/header') %>
 
-	<div id="contentsInner">
+	<section id="contentsInner">
 		<h3><%= title %></h3>
 
 		<div id="block">
 			<form name="errchkActionForm" method="post" action="errorcheck">
 			
 				<div id="blockInner">
-					<!--<table cellpadding="0" cellspacing="0" border="0" width="100%"> -->
 					<table cellpadding="5" cellspacing="0" border="0" class="err_tbl">
 						<tr>
 							<th><p>行</p></th>
@@ -26,7 +25,6 @@
 					</table>
 				</div>	
 			
-
 				<div id="blockFooter">
 					<ul>
 						<li id="download"><input type="submit" name="submit" value="&nbsp;" /></li>
@@ -40,6 +38,6 @@
 
 			</form>
 		</div>
-	</div>
+	</section>
 
 <%- include('partials/footer') %>

@@ -35,6 +35,18 @@ a:active {color:#F00;}
 	text-align:center;
 }
 
+.attention
+{
+	margin: 10px 0;
+}
+
+.attention p,
+.attention li
+{
+	color: red;
+	font-weight: bold;
+	font-size: 1.1em;
+}
 /* ================================================== */
 /* #header */
 /* ================================================== */
@@ -120,9 +132,6 @@ ul#headerNavi li#help a:hover {
 	background-color:#fff;
 	border:1px solid #C8C8C8;
 	padding:30px;
-
-	-moz-border-radius: 10px;/* for Firefox */
-	-webkit-border-radius: 10px;/*for Safari and chrome */
 	border-radius: 10px;/*CSS3*/
 
 }
@@ -260,16 +269,7 @@ dl#loginData dd {
 #blockFooter {
 	border-top:1px solid #C8C8C8;
 	padding:20px;
-
-
-
-	/* �ʏ� */
-	background:linear-gradient(#2763B6, #004081);
-	/* webkit�p */
-	background:-webkit-gradient(linear, left top, left bottom, from(#2763B6), to(#004081));
-	/* mozilla�p */
-	background:-moz-linear-gradient(top, #2763B6, #004081);
-
+	background-color: #2763B6;
 }
 #blockFooter ul {
 	/*n.misumi*/
@@ -399,12 +399,6 @@ dl#loginData dd {
 /* ================================================== */
 /* #footer */
 /* ================================================== */
-
-#footer {
-	width:100%;
-	border-top:1px solid #C8C8C8;
-}
-
 #footerInner {
 	width:900px;
 	margin:10px auto;

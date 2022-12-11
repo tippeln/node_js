@@ -16,19 +16,17 @@
 
 <body>
     <div id="wrapper">
-        <div id="header">
-            <div id="hgroup">
+        <header id="header">
+            <nav id="hgroup">
                 <h1>NCD DataUpload System </h1> 
-                <h2>National Clinical Database データアップロードシステム</h2>
-    
+                <h2>National Clinical Database データアップロードシステム</h2>    
                 <ul id="headerNavi" class="clearfix">
                     <li id="help"><a href="/data/upload_manual.pdf" target="_blank" rel="norefferrer">HELP</a></li>
                     <li id="logout"><a href="../logout">LOGOUT</a></li>
-                </ul>
-    
-            </div>
-        </div>
-        <div id="contents">
+                </ul>    
+            </nav>
+        </header>
+        <article id="contents">
             <dl id="loginData" class="clearfix">
                 <dt>ログインユーザ：<%= username %></dt>
                 <dt>最終ログイン日時：<%= lastdate %></dt>
