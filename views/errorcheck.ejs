@@ -15,19 +15,23 @@
 							<th><p>関連カラム番号</p></th>
 							<th><p>備考</p></th>
 						</tr>
-						<tr>	
-							<td class="no"><input type="no" id="no" name="no" value="" /></td>
-							<td class="colum_no"><input type="colum_no" id="colum_no" name="colum_no" value=""/></td>
-							<td class="error"><input type="error" id="error" name="error" value="" /></td>
-							<td class="rcolum_no"><input type="rcolum_no" id="rcolum_no" name="rcolum_no" value="" /></td>
-							<td class="biko"><input type="biko" id="biko" name="biko" value="" /></td>
+						<% for(var i in content) { %>
+						<tr>
+							<% var obj = content[i]; %>	
+							<td class="row_no"><%= obj.row_no %></td>
+							<td class="col_no"><%= obj.col_no %></td>
+							<td class="naiyo"><%= obj.naiyo %></td>
+							<td class="rel_col_no"><%= obj.rel_col_no %></td>
+							<td class="biko"><%= obj.biko %></td>
 						</tr>
+						<% } %>
 					</table>
 				</div>	
 			
 				<div id="blockFooter">
 					<ul>
-						<li id="download"><input type="submit" name="submit" value="&nbsp;" /></li>
+						<li id="download" ><a href="javascript:void(0)" onclick="onCSVDownload(this, document.querySelector('.err_tbl'), 'err.csv');"><p>CSV</p></a></li> 
+					    <!-- <li><b><a id="download" href="#" download="test.csv" onclick="handleDownload()">csvファイルダウンロード</a></b></li>-->
 						<li id="upload" style="visibility: hidden;"><input type="submit" name="submit" value="&nbsp;" /></li>
 					</ul>
 					<ul>			
@@ -39,5 +43,38 @@
 			</form>
 		</div>
 	</section>
+
+	<script>
+	// テーブルデータのCSVダウンロード
+	function onCSVDownload(a, table, filename) {
+	  var escaped = /,|\r?\n|\r|"/;
+	  var e = /"/g;
+	
+	  // データ作成
+	  var bom = new Uint8Array([0xEF, 0xBB, 0xBF]); // UTF-8BOMあり
+	  var csv = [], row = [], field, r, c;
+	  for (r=0;  r<table.rows.length; r++) {
+		row.length = 0;
+		for (c=0; c<table.rows[r].cells.length; c++) {
+		  field = table.rows[r].cells[c].textContent;
+		  row.push(escaped.test(field)? '"'+field.replace(e, '""')+'"': field);
+		  // 区切り、改行、エスケープ文字を含む場合、エスケープ文字文字で囲む（エスケープ文字は二重にする）
+		}
+		csv.push(row.join(','));
+	  }
+	  //var blob = new Blob([/*bom, */csv.join('\n')], {'type': 'text/csv'}); // BOMなし
+	  var blob = new Blob([bom, csv.join('\n')], {'type': 'text/csv'});
+	
+	  // 保存
+	  if (window.navigator.msSaveBlob) {
+		// IE用(保存 or 開く保存)
+		window.navigator.msSaveBlob(blob, filename); 
+		//window.navigator.msSaveOrOpenBlob(blob, filename);
+	  } else {
+		a.download = filename;
+		a.href = window.URL.createObjectURL(blob);
+	  }
+	}	
+	</script>
 
 <%- include('partials/footer') %>

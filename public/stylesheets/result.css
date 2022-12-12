@@ -1,7 +1,49 @@
 @charset "utf-8";
 /* CSS Document */
+.src_tbl p {
+    font-size: 8px;
+    color:black;
+}
 
-#block table {width:100%;}
+
+.err_tbl {
+    width: 100%;
+}
+.err_tbl tr th {
+	background-color: #A2D2E8;
+}
+
+.err_tbl tr th p {
+    font-size: 8px;
+    font-weight: bold;
+    color:black;
+}
+
+.no input{
+	width: 50px;
+}
+
+.colum_no input {
+	width: 50px;
+}
+
+.error input {
+	width: 100px;
+    height:30px;
+}
+
+.rcolum_no input {
+	width: 100px;
+}
+
+.biko input {
+	width: 100px;
+}
+
+#block table {
+	width:100%;
+}
+
 
 #block table thead {
 	color:#000;
@@ -12,7 +54,7 @@
 	text-align:left;
 	padding:10px;
 	border-bottom:1px solid #C8C8C8;
-	font-size:12px;
+	font-size:8px;
 	font-weight:bold;
 }
 
@@ -32,9 +74,9 @@
 
 #block table tbody tr td span {
 	display:block;
-	padding:3px;
+	padding:1px;
 	border:1px solid #C8C8C8;
-	font-size:12px;
+	font-size:8px;
 	color:#000;
 	background-color:#FFF;
 }

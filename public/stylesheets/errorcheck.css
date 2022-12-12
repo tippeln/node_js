@@ -5,29 +5,35 @@
 	background-color: #A2D2E8;
 }
 
+.err_tbl tr td {
+	border: 0.1px #dad7d7 solid;
+	text-align: left;
+}
 .err_tbl tr th p {
     font-size: 8px;
     font-weight: bold;
     color:black;
 }
 
-.no input{
+.row_no {
 	width: 50px;
 }
 
-.colum_no input {
+.col_no{
 	width: 50px;
 }
 
-.error input {
-	width: 180px;
-    height:30px;
+.naiyo  {
+	width: 250px;
+	text-align: left;
 }
 
-.rcolum_no input {
-	width: 100px;
+.rel_col_no{
+	width: 50px;
 }
 
-.biko input {
+.biko{
 	width: 300px;
+	text-align: left;
+
 }

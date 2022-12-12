@@ -380,15 +380,17 @@ dl#loginData dd {
 
 
 /* #upload */
-#blockFooter ul li#download input {
-    border: 0px;
+#blockFooter ul li#download a{
+	display:block;
 	width:212px;
 	height:44px;
 	background:url(../images/download_btn.png) 0 0 no-repeat;
 	cursor:pointer;
+	text-indent:-9999px;
 }
 
-#blockFooter ul li#download input:hover {
+
+#blockFooter ul li#download a:hover {
 	background:url(../images/download_btn_on.png) 0 0 no-repeat;
 }
 
