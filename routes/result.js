@@ -30,7 +30,7 @@ router.get('/execute', (req, res, next) => {
 router.get('/errorcheck',(req, res, next)=> {
   const id = 1;
   db.t_error.findAll({
-    where: { id:id},
+    where: { shorei_no:id},
   }).then(usrs => {
     var data = {
       title: 'エラー確認画面',
