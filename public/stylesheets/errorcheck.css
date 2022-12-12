@@ -2,17 +2,28 @@
     width: 100%;
 }
 .err_tbl tr th {
+	border: 0.01em #fff solid;
 	background-color: #A2D2E8;
 }
 
 .err_tbl tr td {
-	border: 0.1px #dad7d7 solid;
+	border: 0.01em #fff solid;
 	text-align: left;
 }
 .err_tbl tr th p {
     font-size: 8px;
     font-weight: bold;
     color:black;
+}
+
+/* 偶数行の背景色変更 */
+.err_tbl tr:nth-child(2n) {
+    background: #fff;
+}
+
+/* 奇数行の背景色変更 */
+.err_tbl tr:nth-child(2n+1) {
+    background: #f1efef;
 }
 
 .row_no {

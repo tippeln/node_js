@@ -8,12 +8,9 @@ const session = require('express-session');
 //route定義
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
+var logoutRouter = require('./routes/logout');
 var uploadRouter = require('./routes/upload');
 var resultRouter = require('./routes/result');
-var logoutRouter = require('./routes/logout');
-var helpRouter = require('./routes/help');
-//db access test
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -37,8 +34,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
-app.use('/help', helpRouter);
-
 
 //session check
 app.use((req, res, next) => {
@@ -54,16 +49,15 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/upload', uploadRouter);
 app.use('/result', resultRouter);
-app.use('/users', usersRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

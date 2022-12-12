@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   var data = {
       title: 'アップロード',
-      func:'common',
+      func:'upload',
       username: req.session.username,
       lastdate: req.session.lastdate
   }
@@ -13,10 +13,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* POST users listing. */
-router.post('/', function(req, res, next) {
+router.post('/', (req, res, next)　=>  {
   var data = {
       title: 'アップロード完了',
-      func:'common',
+      func:'upload',
       username: req.session.username,
       lastdate: req.session.lastdate
   }

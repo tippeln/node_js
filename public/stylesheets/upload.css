@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+.upd_tbl {
+    width: 100%;
+}
+.upd_tbl tr th {
+	text-align: right;
+}
+
+.upd_tbl tr td {
+	text-align: left;
+	width:60%;
+}
+
+
+/* ================================================== */
+/* #blockFooter */
+/* ================================================== */
+#blockFooter ul {
+	width:212px;
+	margin:0 auto;
+}
+

@@ -6,10 +6,8 @@
 			<div id="block">
 				<div id="blockInner">
 					<table cellpadding="0" cellspacing="0" border="0" class="src_tbl">
-					<thread>
 						<tr>
-							<th><p>施設・診療科：</p></th>
-							<td>
+							<td>施設・診療科：
 								<select required>
 									<option value="" hidden>お選びください</option>
 									<option value="1">施設・診療科1</option>
@@ -17,13 +15,10 @@
 									<option value="3">施設・診療科3</option>
 								</select>
 							</td>
-							<td><input type="submit" name="submit" value="選択"></td>
+							<td style="text-align: left;"><input type="submit" name="submit" value=" 選択 " ></td>
 						</tr>
-					</thread>
-					<tbody>
 						<tr>
-							<th><p>専門分野：</p></th>
-							<td>
+							<td>専門分野：
 								<select required>
 									<option value="" hidden>お選びください</option>
 									<option value="1">専門分野1</option>
@@ -31,8 +26,7 @@
 									<option value="3">専門分野3</option>
 								</select>
 							</td>
-							<th><p>ユーザーID:</p></th>
-							<td>
+							<td>ユーザーID:
 								<select required>
 									<option value="" hidden>お選びください</option>
 									<option value="1">123456</option>
@@ -40,8 +34,7 @@
 									<option value="3">567890</option>
 								</select>
 							</td>
-							<th><p>アップロード日時：</p></th>
-							<td>
+							<td>アップロード日時：
 								<select required>
 									<option value="" hidden>お選びください</option>
 									<option value="1">2022年度</option>
@@ -49,8 +42,7 @@
 									<option value="3">2020年度</option>
 								</select>
 							</td>
-							<th><p>結果：</p></th>
-							<td>
+							<td>結果：
 								<select required>
 									<option value="" hidden>お選びください</option>
 									<option value="1">結果1</option>
@@ -59,11 +51,9 @@
 								</select>
 							</td>
 						</tr>
-					</tbody>
 					</table>
 
 					<table cellpadding="0" cellspacing="0" border="0" class="err_tbl">
-					<thread>
 						<tr>
 							<th><p>専門分野</p></th>
 							<th><p>ファイル名</p></th>
@@ -73,30 +63,31 @@
 							<th><p>件</p><p>数</p></th>
 							<th><p>結果</p></th>
 						</tr>
-					</thread>
-					<tbody>
-						<tr>	
-							<td class="no"><input type="text" id="test" name="test" value="" /></td>
-							<td class="colum_no"><input type="text" id="colum_no" name="colum_no" value=""/></td>
-							<td class="error"><input type="text" id="error" name="error" value="" /></td>
-							<td class="rcolum_no"><input type="text" id="rcolum_no" name="rcolum_no" value="" /></td>
-							<td class="biko"><input type="text" id="biko" name="biko" value="" /></td>
-							<td class="biko2"><input type="text" id="biko" name="biko" value="" /></td>
-							<td class="biko3"><p><a href="../result/errorcheck"><input type="submit" name="submit" value="エラー" /></a></p></td>
+						<% for(var i in content) { %>
+						<tr>
+							<% var obj = content[i]; %>	
+							<td class="senmon"><%= obj.row_no %></td>
+							<td class="csv_file_"><%= obj.row_no %></td>
+							<td class="shinryoka"><%= obj.row_no %></td>
+							<td class="upd_user_no"><%= obj.row_no %></td>
+							<td class="upd_datetime"><%= obj.row_no %></td>
+							<td class="kensu"><%= obj.row_no %></td>
+							<td class="result"><%= obj.row_no %></td>
 						</tr>
-						<tr>	
-							<td class="no"><input type="text" id="no" name="no" value="" /></td>
-							<td class="colum_no"><input type="text" id="colum_no" name="colum_no" value=""/></td>
-							<td class="error"><input type="text" id="error" name="error" value="" /></td>
-							<td class="rcolum_no"><input type="text" id="rcolum_no" name="rcolum_no" value="" /></td>
-							<td class="biko"><input type="text" id="biko" name="biko" value="" /></td>
-							<td class="biko2"><input type="text" id="biko" name="biko" value="" /></td>
-							<td class="biko3"><p><a href="../result/execute"><input type="submit" name="submit" value="仮登録完了" /></a></p></td>
-						</tr>
+						<% } %>
 
-					</tbody>
+						<tr>	
+							<td class="senmon">test</td>
+							<td class="csv_file_">test</td>
+							<td class="shinryoka">test</td>
+							<td class="upd_user_no">test</td>
+							<td class="upd_datetime">未取込</td>
+							<td class="result"><p><a href="../result/errorcheck"><input type="submit" name="submit" value="エラー" /></a></p></td>
+							<td class="result"><p><a href="../result/execute"><input type="submit" name="submit" value="仮完了登録" /></a></p></td>
+						</tr>
 					</table>
 				</div>
+
 
 				<div id="blockFooter">
 					<ul>

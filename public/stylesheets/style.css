@@ -57,7 +57,7 @@ a:active {color:#F00;}
 }
 
 #hgroup {
-	width:900px;
+	width:1000px;
 	height:70px;
 	margin:0 auto;
 	position:relative;
@@ -122,7 +122,7 @@ ul#headerNavi li#help a:hover {
 /* ================================================== */
 
 #contents {
-	width:900px;
+	width:1000px;
 	padding:20px 0 35px;
 	margin:0 auto;
 }
@@ -402,7 +402,7 @@ dl#loginData dd {
 /* #footer */
 /* ================================================== */
 #footerInner {
-	width:900px;
+	width:1000px;
 	margin:10px auto;
 	text-align:right;
 }

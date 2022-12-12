@@ -1,101 +1,42 @@
 @charset "utf-8";
 /* CSS Document */
-.src_tbl p {
-    font-size: 8px;
-    color:black;
+.src_tbl {
+    width: 100%;
 }
 
+.src_tbl tr td {
+	text-align: right;
+}
 
 .err_tbl {
     width: 100%;
 }
 .err_tbl tr th {
+	border: 0.01em #fff solid;
 	background-color: #A2D2E8;
 }
 
+.err_tbl tr td {
+	border: 0.01em #fff solid;
+	text-align: left;
+}
 .err_tbl tr th p {
     font-size: 8px;
     font-weight: bold;
     color:black;
 }
 
-.no input{
-	width: 50px;
+/* 偶数行の背景色変更 */
+.err_tbl tr:nth-child(2n) {
+    background: #fff;
 }
 
-.colum_no input {
-	width: 50px;
-}
-
-.error input {
-	width: 100px;
-    height:30px;
-}
-
-.rcolum_no input {
-	width: 100px;
-}
-
-.biko input {
-	width: 100px;
-}
-
-#block table {
-	width:100%;
+/* 奇数行の背景色変更 */
+.err_tbl tr:nth-child(2n+1) {
+    background: #f1efef;
 }
 
 
-#block table thead {
-	color:#000;
-	background-color:#E1F0F8;
-}
-
-#block table thead tr th {
-	text-align:left;
-	padding:10px;
-	border-bottom:1px solid #C8C8C8;
-	font-size:8px;
-	font-weight:bold;
-}
-
-#block table thead tr th {width:15%; text-align:center;padding:10px;border-bottom:1px solid #C8C8C8;}
-#block table thead tr th + th {width:12%;text-align:center;}
-#block table thead tr th + th + th {width:16%; text-align:center;}
-#block table thead tr th + th + th + th {width:14%;text-align:center;}
-#block table thead tr th + th + th + th + th {width:13%;text-align:center;}
-#block table thead tr th + th + th + th + th + th {width:15%;text-align:center;}
-#block table thead tr th + th + th + th + th + th + th {width:5%;text-align:center;}
-#block table thead tr th + th + th + th + th + th + th + th {width:12%;text-align:center;}
-
-
-#block table tbody tr td {
-	padding:10px;
-}
-
-#block table tbody tr td span {
-	display:block;
-	padding:1px;
-	border:1px solid #C8C8C8;
-	font-size:8px;
-	color:#000;
-	background-color:#FFF;
-}
-#block table tbody tr td:last-child{word-break: keep-all;}
-#block table tbody tr td span {width:97%; text-align:left; float:right;}
-#block table tbody tr td + td span {width:97%; text-align:left;}
-#block table tbody tr td + td + td span {width:97%; text-align:left; float:left;}
-#block table tbody tr td + td + td + td span {width:95%; text-align:left;}
-#block table tbody tr td + td + td + td + td span {width:97%; text-align:left;}
-#block table tbody tr td + td + td + td + td + td span {width:97%; text-align:left;}
-#block table tbody tr td + td + td + td + td + td + td span {width:97%; text-align:right;}
-#block table tbody tr td + td + td + td + td + td + td + td span {width:97%; text-align:center;}
-
-
-
-/* ================================================== */
-/* #attentionBlock */
-/* ================================================== */
-#attentionBlock { margin-top:15px;}
 
 
 /* ================================================== */
