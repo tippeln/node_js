@@ -4,7 +4,7 @@
 		<h3><%= title %></h3>
 
 		<div id="block">
-			<form name="updateActionForm" method="post" action="upload">
+			<div id="file_upload"><!-- <form name="updateActionForm" method="post" action="upload" id="file_upload">-->
 				<div id="blockInner">
 					<table cellpadding="0" cellspacing="0" border="0">
 						<tr>
@@ -46,7 +46,7 @@
 						<tr>
 							<th><p>ファイル</p></th>
 							<td>
-								<input type="text" id="filebox" name="filebox" value=""><input type="file" id="file" name="file" value="参照">
+								<input type="text" id="filebox" name="filebox" value=""><input type="file" accept=".csv, .xlsx" @change="onFileChange">
 							</td>
 						</tr>
 
@@ -72,15 +72,61 @@
 				</div>
 
 				<div id="blockFooter">
+					<div id="app">
+						<input type="file" accept=".csv, .xlsx" @change="onFileChange">
+						<br>
+						<button type="button" @click="onSubmit">送信する</button>
+					</div>
 					<ul>
 						<li id="upload"><a href="../upload/upload_done"><input type="submit" name="submit" value="&nbsp;" /></a></li>
 						<li id="back"><a href="../">メニュー</a></li>
 					</ul>
 				</div>	
-			</form>
+			</div><!--</form>-->
 		</div>
 	</div>
 
 
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+	<script>
+	    console.log("スクリプトスタート！")
+		new Vue({
+			el: '#app',
+			data: {
+				importFile: null
+			},
+			methods: {
+				onFileChange(e) {
+	
+					const files = e.target.files;
+	
+					if(files.length > 0) {
+	
+						this.importFile = files[0];
+	
+					}
+	
+				},
+				onSubmit() {
+	
+					let formData = new FormData();
+					formData.append('importFile', this.importFile);
+					axios.post('/upload', formData)
+						.then(response => {
+	
+							if(response.data.result) {
+	
+								alert('インポート完了!');
+	
+							}
+	
+						});
+	
+				}
+			}
+		});
+	
+	</script>
 	
 <%- include('partials/footer') %>

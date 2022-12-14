@@ -21,7 +21,7 @@ router.get('/', (req, res, next) => {
       }
 });
 
-/* Psot */
+/* Post */
 router.post('/', (req, res, next) => {
     //フォーム情報取得
     var userid = req.body.userid || null;
