@@ -4,8 +4,8 @@ const multer = require('multer');
 const upload_file = multer({ dest: 'uploads/' });
 // const fs = require('fs');
 // const validator = require('validator');
-// const db = require('../models/index');
-// const { Op } = require("sequelize");
+const db = require('../models/index');
+const { Op } = require("sequelize");
 // const bodyParser  = require('body-parser');  
 
 
@@ -30,6 +30,27 @@ router.post('/upload_done', upload_file.single('csvfile'),  (req, res, next) => 
     else {
       console.log('Image can not uploaded!')
     }
+
+    //フォーム情報取得
+    var senmon = req.body.senmon || null;
+    var syubetsu = req.body.syubetsu || null;
+    console.log(senmon);
+    console.log(syubetsu);
+
+    db.if_shorei_csv.create({
+      // shorei_no: 1,
+      // senmon: senmon,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }).then(user => {
+    
+      //
+    
+    });
+
+
+
+
 
     var data = {
         title: 'アップロード完了',

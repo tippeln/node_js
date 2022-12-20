@@ -12,9 +12,9 @@
 							<th><p>専門分野</p></th>
 							<td>
 								<!-- <select required class="senmon"> -->
-									<select  class="senmon">
+									<select name="senmon" class="senmon">
 									<option value="" hidden>お選びください</option>
-									<option value="1">専門分野1</option>
+									<option value=1>専門分野1</option>
 									<option value="2">専門分野1</option>
 									<option value="3">専門分野1</option>
 								</select>
@@ -23,7 +23,7 @@
 						<tr>
 							<th><p>年度</p></th>
 							<td>
-								<select  class="nendo">
+								<select name="nendo" class="nendo">
 									<option value="" hidden>お選びください</option>
 									<option value="1">2022年度</option>
 									<option value="2">2021年度</option>
@@ -35,9 +35,9 @@
 							<th><p>種別</p></th>
 							<td>
 								<!-- <input id="new" type="radio" name="syubetsu" required> -->
-								<input id="new" type="radio" name="syubetsu">
+								<input id="new" type="radio" name="syubetsu" value="1">
 								<label for="new">新規</label>
-								<input id="add" type="radio" name="syubetsu">
+								<input id="add" type="radio" name="syubetsu" value="2">
 								<label for="add">入院・手術追加</label></p></li>
 							</td>
 						</tr>
@@ -49,17 +49,12 @@
 						<tr>
 							<th><p>ファイル</p></th>
 							<td>
-								<!-- <form action="/upload" method="post" enctype="multipart/form-data"> -->
-									<!-- <form action="/import" method="post" enctype="multipart/form-data"> -->
-										<!-- <input type="file" name="avatar" /> -->
-									  <!-- </form> -->
-									<input type="text" id="fake_text_box" value="" size="35" readonly onClick="$('#file').click();">
+								<input type="text" id="fake_text_box" value="" size="50" readonly onClick="$('#file').click();">
 
-									<label for="file" id="upload_label">参照									
-										<input type="file" id="file"  accept=".csv" name="csvfile" onchange="$('#fake_text_box').val($(this).val())">
-										<input type="text" id="file_upload" value="" onClick="$('#file').click();">
-									</label>
-								<!-- </form> -->
+								<label for="file" id="upload_label">参照									
+									<input type="file" id="file"  accept=".csv" name="csvfile" onchange="$('#fake_text_box').val($(this).val())">
+									<input type="text" id="file_upload" value="" onClick="$('#file').click();">
+								</label>				
 							</td>
 						</tr>
 
