@@ -24,6 +24,15 @@
 	width:360px;
 }
 
+.attention_login{
+	display:inline-block;
+}
+
+.attention_login li{
+	color: red;
+	font-size: 0.9em;
+}
+
 /*ログイン画面は非表示*/
 #logout {
 	visibility: hidden;

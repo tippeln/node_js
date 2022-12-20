@@ -13,7 +13,7 @@
 
 body {
 	background-color:#EFEFEF;
-	color:#8C8C8C;
+	color:#2e2e2e;
 }
 
 a:link {color:#2763B6;}
@@ -45,7 +45,7 @@ a:active {color:#F00;}
 {
 	color: red;
 	font-weight: bold;
-	font-size: 1.1em;
+	font-size: 1.0em;
 }
 /* ================================================== */
 /* #header */
@@ -57,7 +57,7 @@ a:active {color:#F00;}
 }
 
 #hgroup {
-	width:1000px;
+	width:70%;
 	height:70px;
 	margin:0 auto;
 	position:relative;
@@ -122,7 +122,7 @@ ul#headerNavi li#help a:hover {
 /* ================================================== */
 
 #contents {
-	width:1000px;
+	width:70%;
 	padding:20px 0 35px;
 	margin:0 auto;
 }
@@ -163,6 +163,7 @@ ul#headerNavi li#help a:hover {
 	border:2px solid #FFF;
 	background-color:#F7F7F7;;
 	text-align:center;
+	padding:10px;
 }
 
 #blockInner02 {

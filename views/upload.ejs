@@ -4,13 +4,15 @@
 		<h3><%= title %></h3>
 
 		<div id="block">
-			<div id="file_upload"><!-- <form name="updateActionForm" method="post" action="upload" id="file_upload">-->
+			<form action="upload/upload_done" method="post" enctype="multipart/form-data">
+			 <!-- <form name="updateActionForm" method="post" action="upload/upload_done" id="file_upload"> -->
 				<div id="blockInner">
-					<table cellpadding="0" cellspacing="0" border="0">
+					<table cellpadding="0" cellspacing="0" border="0" class="upd_tbl">
 						<tr>
 							<th><p>専門分野</p></th>
 							<td>
-								<select required>
+								<!-- <select required class="senmon"> -->
+									<select  class="senmon">
 									<option value="" hidden>お選びください</option>
 									<option value="1">専門分野1</option>
 									<option value="2">専門分野1</option>
@@ -21,7 +23,7 @@
 						<tr>
 							<th><p>年度</p></th>
 							<td>
-								<select required>
+								<select  class="nendo">
 									<option value="" hidden>お選びください</option>
 									<option value="1">2022年度</option>
 									<option value="2">2021年度</option>
@@ -30,11 +32,12 @@
 							</td>
 						</tr>
 						<tr>
-							<th><p>種別　</p></th>
+							<th><p>種別</p></th>
 							<td>
-								<input id="new" type="radio" name="new">
+								<!-- <input id="new" type="radio" name="syubetsu" required> -->
+								<input id="new" type="radio" name="syubetsu">
 								<label for="new">新規</label>
-								<input id="add" type="radio" name="add">
+								<input id="add" type="radio" name="syubetsu">
 								<label for="add">入院・手術追加</label></p></li>
 							</td>
 						</tr>
@@ -46,14 +49,24 @@
 						<tr>
 							<th><p>ファイル</p></th>
 							<td>
-								<input type="text" id="filebox" name="filebox" value=""><input type="file" accept=".csv, .xlsx" @change="onFileChange">
+								<!-- <form action="/upload" method="post" enctype="multipart/form-data"> -->
+									<!-- <form action="/import" method="post" enctype="multipart/form-data"> -->
+										<!-- <input type="file" name="avatar" /> -->
+									  <!-- </form> -->
+									<input type="text" id="fake_text_box" value="" size="35" readonly onClick="$('#file').click();">
+
+									<label for="file" id="upload_label">参照									
+										<input type="file" id="file"  accept=".csv" name="csvfile" onchange="$('#fake_text_box').val($(this).val())">
+										<input type="text" id="file_upload" value="" onClick="$('#file').click();">
+									</label>
+								<!-- </form> -->
 							</td>
 						</tr>
 
 						<tr>
-							<th><p>年度</p></th>
+							<th><p>施設・診療科</p></th>
 							<td>
-								<select required>
+								<select required class="sisetsu">
 									<option value="" hidden>お選びください</option>
 									<option value="1">施設・診療科1</option>
 									<option value="2">施設・診療科2</option>
@@ -65,68 +78,21 @@
 						<tr>
 							<th><p>連絡先メールアドレス</p></th>
 							<td>
-								<input type="text" id="mail" name="mail" value="">
+								<input type="mail" id="mail" name="mail" value="" class="mailaddress">
 							</td>
 						</tr>
 					</table>
 				</div>
 
 				<div id="blockFooter">
-					<div id="app">
-						<input type="file" accept=".csv, .xlsx" @change="onFileChange">
-						<br>
-						<button type="button" @click="onSubmit">送信する</button>
-					</div>
 					<ul>
-						<li id="upload"><a href="../upload/upload_done"><input type="submit" name="submit" value="&nbsp;" /></a></li>
+						<!-- <li id="upload"><a href="../upload/upload_done"><input type="submit" name="submit" value="&nbsp;" /></a></li> -->
+						<li id="upload"><input type="submit" name="submit" value="&nbsp;" /></a></li>
 						<li id="back"><a href="../">メニュー</a></li>
 					</ul>
 				</div>	
-			</div><!--</form>-->
+			</form><!--</form>-->
 		</div>
 	</div>
 
-
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
-	<script>
-	    console.log("スクリプトスタート！")
-		new Vue({
-			el: '#app',
-			data: {
-				importFile: null
-			},
-			methods: {
-				onFileChange(e) {
-	
-					const files = e.target.files;
-	
-					if(files.length > 0) {
-	
-						this.importFile = files[0];
-	
-					}
-	
-				},
-				onSubmit() {
-	
-					let formData = new FormData();
-					formData.append('importFile', this.importFile);
-					axios.post('/upload', formData)
-						.then(response => {
-	
-							if(response.data.result) {
-	
-								alert('インポート完了!');
-	
-							}
-	
-						});
-	
-				}
-			}
-		});
-	
-	</script>
-	
 <%- include('partials/footer') %>
